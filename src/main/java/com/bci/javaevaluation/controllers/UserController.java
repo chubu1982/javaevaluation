@@ -1,13 +1,11 @@
 package com.bci.javaevaluation.controllers;
 
-import com.bci.javaevaluation.EmailAlreadyExistException;
 import com.bci.javaevaluation.model.MessageDTO;
 import com.bci.javaevaluation.model.UserDTO;
 import com.bci.javaevaluation.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJacksonValue;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
