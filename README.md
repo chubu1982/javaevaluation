@@ -37,6 +37,14 @@ Instrucciones para instalar y configurar el proyecto.
     ./gradlew bootRun
     ```
 
+5. Generar reporte de cobertura:
+
+   ```bash
+    ./gradlew test jacocoTestReport
+    ```
+   
+   Esto generará un reporte en formato HTML que puedes encontrar en build/reports/jacoco/test/html/index.html.
+
 ## Uso
 
 Opcionalmente se brinda una collection de Postman con algunos request de ejemplo para poder probar la API.

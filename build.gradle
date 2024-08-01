@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.5.14'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'jacoco'
 }
 
 group = 'com.bci'
@@ -24,13 +25,27 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'org.mockito:mockito-core'
+}
+
+jacoco {
+    toolVersion = '0.8.8'
 }
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
 }
 
 bootRun {
     jvmArgs = ['-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005']
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+    }
 }
 
